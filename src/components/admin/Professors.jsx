@@ -18,7 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Professor = () => {
-  const port = import.meta.env.VITE_PORT_SPRING;
+  const depurl = import.meta.env.DEP_URL;
   const [Professors, setProfessors] = useState([]);
   const [selectedgroups, setSelectedgroups] = useState([]);
   const [Professor, setProfessor] = useState({
@@ -34,7 +34,7 @@ const Professor = () => {
   const [loading, setLoading] = useState(false);
   const [updateMode, setUpdateMode] = useState(false);
   const [id, setId] = useState(null);
-  const url = `http://localhost:${port}/api/v1/professors`;
+  const url = `${depurl}/api/v1/professors`;
 
   const fetchProfessor = async () => {
     setLoading(true);
@@ -49,7 +49,7 @@ const Professor = () => {
   };
 
   const fetchfetchgroup = async () => {
-    const rep = await axios.get(`http://localhost:${port}/api/v1/groupes`);
+    const rep = await axios.get(`${depurl}/api/v1/groupes`);
     setgroups(rep.data);
   };
 

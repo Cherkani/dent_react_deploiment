@@ -18,7 +18,8 @@
     import "react-toastify/dist/ReactToastify.css";
     
     const Student = () => {
-        const port = import.meta.env.VITE_PORT_SPRING;
+      
+    const depurl = import.meta.env.DEP_URL;
        
       const [students, setStudents] = useState([]);
     
@@ -40,7 +41,7 @@
       const [loading, setLoading] = useState(false);
       const [updateMode, setUpdateMode] = useState(false);
       const [id, setId] = useState(null);
-      const url = `http://localhost:${port}/api/v1/students`;
+      const url = `${depurl}/api/v1/students`;
     
       const fetchStudent = async () => {
         setLoading(true);
@@ -50,7 +51,7 @@
       };
     
       const fetchMajor = async () => {
-        const rep = await axios.get(`http://localhost:${port}/api/v1/groupes`);
+        const rep = await axios.get(`${depurl}/api/v1/groupes`);
         setMajors(rep.data);
       };
     

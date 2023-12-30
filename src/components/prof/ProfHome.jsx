@@ -14,7 +14,8 @@ import Dashboard from './Dashboard'
 import Statistiques from './Statistiques'
 
 const ProfHome = () => {
-  const port = import.meta.env.VITE_PORT_SPRING;
+  
+  const depurl = import.meta.env.DEP_URL;
   const { componentName } = useParams();
 
   const renderComponent = () => {

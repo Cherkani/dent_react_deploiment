@@ -7,7 +7,7 @@ import { DotLoader } from 'react-spinners';
 import {faDownload, faPlus, faTrash, faNoteSticky, faEnvelope, faRefresh, faPhone, faPen, faClose, faAdd, faHouse, faUser, faPeopleGroup, faTooth, faGear, faPaperclip, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import jsPDF from 'jspdf';
 const Dashboard = () => {
-    const port = import.meta.env.VITE_PORT_SPRING;
+    const depurl = import.meta.env.DEP_URL;
     const [groups, setGroups] = useState([]);
     const [pws, setPws] = useState([])
     const [students, setStudents] = useState([]);
@@ -17,7 +17,7 @@ const Dashboard = () => {
     const [groupId, setGroupId] = useState("")
     const [studentId, setStudentId] = useState("")
     const [studentMode, setStudentMode] = useState(false)
-    const url = `http://localhost:${port}/api`;
+    const url = `${depurl}/api`;
     const userlogin = JSON.parse(localStorage.getItem("userlogin"))
 
     const fetchGroups = async () => {

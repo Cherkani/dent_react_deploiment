@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import SidebarAdmin from "./SidebarAdmin";
 
 const Groupe = () => {
+  const depurl = import.meta.env.DEP_URL;
   const [Groupes, setGroupes] = useState([]);
   const [Groupe, setGroupe] = useState({
     id: "",
@@ -18,7 +19,7 @@ const Groupe = () => {
   });
   const [loading, setLoading] = useState(false);
   const [updateMode, setUpdateMode] = useState(false);
-  const url = "http://localhost:8020/api/v1/groupes";
+  const url = `${depurl}/v1/groupes`;
 
   const fetshGroupes = async () => {
     setLoading(true);

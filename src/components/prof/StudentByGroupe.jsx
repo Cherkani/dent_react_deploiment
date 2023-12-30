@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Statistiques = () => {
-  const port = import.meta.env.VITE_PORT_SPRING;
+  const depurl = import.meta.env.DEP_URL;
   const [majors, setMajors] = useState([]);
   const [major, setMajor] = useState({
     id: null,
@@ -12,8 +12,8 @@ const Statistiques = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingStudents, setLoadingStudents] = useState(false);
-  const url = `http://localhost:${port}/api/v1/groupes`;
-  const url1 = `http://localhost:${port}/api/v1/students/groupe`;
+  const url = `${depurl}/api/v1/groupes`;
+  const url1 = `${depurl}/api/v1/students/groupe`;
 
   const fetchMajors = async () => {
     setLoading(true);

@@ -8,7 +8,9 @@ import { faTooth, faFileAlt,faUsers } from '@fortawesome/free-solid-svg-icons';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from "react-modal";
 const PW = () => {
-    const port = import.meta.env.VITE_PORT_SPRING;
+  
+ 
+  const depurl = import.meta.env.DEP_URL;
     const [pws, setPWs] = useState([]);
     const [pw, setPW] = useState({
         id: '',
@@ -36,7 +38,7 @@ const PW = () => {
     const [modal, setModal] = useState(false);
     const [modalDel, setModalDel] = useState(false);
     const [updateMode, setUpdateMode] = useState(false);
-    const url = `http://localhost:${port}/api`;
+    const url = `${depurl}/api`;
     const userlogin = JSON.parse(localStorage.getItem("userlogin"));
 
     const fetchPWs = async () => {

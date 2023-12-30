@@ -12,7 +12,9 @@ import { FaRegFile } from "react-icons/fa";
 import { BsListTask } from "react-icons/bs";
 
 const Sidebar = () => {
-  const port = import.meta.env.VITE_PORT_SPRING;
+  
+  
+  const depurl = import.meta.env.DEP_URL;
   const handleLogout = () =>{
     localStorage.removeItem("userlogin")
     window.location = "/"
@@ -20,7 +22,7 @@ const Sidebar = () => {
   const [prof, setProf] = useState({});
   const [loading, setLoading] = useState(false);
   const userlogin = JSON.parse(localStorage.getItem("userlogin"));
-  const url = `http://localhost:${port}/api/users/${userlogin.id}`;
+  const url = `${depurl}/api/users/${userlogin.id}`;
 
   const getProfessor = async () => {
     const res = await axios.get(`${url}`);

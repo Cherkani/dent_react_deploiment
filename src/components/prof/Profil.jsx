@@ -6,13 +6,14 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import Prof from '../../assets/b.png';
 
 const Profil = () => {
-  
-  const port = import.meta.env.VITE_PORT_SPRING;
+
+ 
+  const depurl = import.meta.env.DEP_URL;
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [edit, setEdit] = useState(false);
-  const url = `http://localhost:${port}/api/users`;
+  const url = `${depurl}/api/users`;
   const userlogin = JSON.parse(localStorage.getItem('userlogin'));
 
   const getProfessor = async () => {

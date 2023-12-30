@@ -10,8 +10,8 @@ const Statistiques = () => {
     const [nbrStedentTab, setNbrStudentTab] = useState([])
     const [nbrPWTab, setNbrPwTab] = useState([])
     const userlogin = JSON.parse(localStorage.getItem("userlogin"))
-    const port = import.meta.env.VITE_PORT_SPRING;
-    const url = `http://localhost:${port}/api/groups`;
+    const depurl = import.meta.env.DEP_URL;
+    const url = `${depurl}/api/groups`;
     const [change, setChange] = useState(false)
 
     const fetchGroups = async () => {

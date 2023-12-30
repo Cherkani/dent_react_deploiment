@@ -15,7 +15,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Tooth = () => {
-  const port = import.meta.env.VITE_PORT_SPRING;
+  
+  
+    
+  const depurl = import.meta.env.DEP_URL;
   const [Professors, setProfessors] = useState([]);
   const [Professor, setProfessor] = useState({
     id: "",
@@ -24,7 +27,7 @@ const Tooth = () => {
   const [loading, setLoading] = useState(false);
   const [updateMode, setUpdateMode] = useState(false);
   const [id, setId] = useState(null);
-  const url = `http://localhost:${port}/api/teeth`;
+  const url = `${depurl}/api/teeth`;
 
   const fetchProfessor = async () => {
     setLoading(true);

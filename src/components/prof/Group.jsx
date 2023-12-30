@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash, faPen, faClose, faAdd } from '@fortawesome/free-solid-svg-icons';
 const Group = () => {
-    const port = import.meta.env.VITE_PORT_SPRING;
+    const depurl = import.meta.env.DEP_URL;
     const [groups, setGroups] = useState([]);
     const [group, setGroup] = useState({
         id: '',
@@ -19,7 +19,7 @@ const Group = () => {
     const [addpwMode, setAddPwMode] = useState(false)
     const [pwId, setPwId] = useState("")
     const [pws, setPws] = useState([])
-    const url = `http://localhost:${port}/api/groups`;
+    const url = `${depurl}/api/groups`;
     const userlogin = JSON.parse(localStorage.getItem("userlogin"))
     const notify = (mssg) => {
         toast.success(`${mssg}`, {
@@ -43,7 +43,7 @@ const Group = () => {
 
     const fetshPws = async () => {
         setLoading(true)
-        const rep = await axios.get(`http://localhost:${port}/api/pws/all`)
+        const rep = await axios.get(`${depurl}/api/pws/all`)
         setPws(rep.data)
         setLoading(false)
     }

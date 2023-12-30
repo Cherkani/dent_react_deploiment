@@ -9,12 +9,14 @@ import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
 const StudentDetails = (props) => {
-    const port = import.meta.env.VITE_PORT_SPRING;
+    
+    
+  const depurl = import.meta.env.DEP_URL;
     const studentId = props.id
     const [student, setStudent] = useState({})
     const [loading, setLoading] = useState(false)
     const [doTp, setDoTp] = useState([])
-    const url = `http://localhost:${port}/api/users`;
+    const url = `${depurl}/api/users`;
     const [modal, setModal] = useState(false)
     const [studentPw, setStudentPw] = useState({})
     const [pw, setPw] = useState({})

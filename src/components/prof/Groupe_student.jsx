@@ -16,7 +16,7 @@ import Statistiques from "./StudentByGroupe";
 
 const Groupe = () => {
   
-  const port = import.meta.env.VITE_PORT_SPRING;
+  const depurl = import.meta.env.DEP_URL;
   const [majors, setMajors] = useState([]);
   const [major, setMajor] = useState({
     id: "",
@@ -25,7 +25,7 @@ const Groupe = () => {
   });
   const [loading, setLoading] = useState(false);
   const [updateMode, setUpdateMode] = useState(false);
-  const url = `http://localhost:${port}/api/v1/groupes`;
+  const url = `${depurl}/api/v1/groupes`;
 
   const fetshMajors = async () => {
     setLoading(true);
